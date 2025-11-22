@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex justify-center items-center h-screen w-screen">
+
+    <div class="bg-white/20 backdrop-blur-xl p-8 rounded-2xl shadow-2xl border border-white/40 w-[380px]">
+        <ul class="flex flex-col space-y-4">
+
+            <li class="listItem w-full p-5 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition duration-300 space-y-3 border border-white/30">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-lg font-semibold drop-shadow">List One</h1>
+                    <button class="text-xl font-bold w-9 h-9 rounded-full bg-white/30 hover:bg-white 
+                    hover:text-purple-600 flex justify-center items-center transition cursor-pointer shadow">+</button>
+                </div>
+                <p class="text-white/90 leading-relaxed">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam, omnis amet? Eveniet adipisci repellat omnis vitae vel molestias ex molestiae laudantium laboriosam rerum sed, minima dolores odit? Corrupti, at cum!</p>
+            </li>
+
+            <li class="listItem w-full p-5 bg-gradient-to-r from-pink-500 to-red-500 text-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition duration-300 space-y-3 border border-white/30">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-lg font-semibold drop-shadow">List Two</h1>
+                    <button class="text-xl font-bold w-9 h-9 rounded-full bg-white/30 hover:bg-white 
+                    hover:text-red-600 flex justify-center items-center transition cursor-pointer shadow">+</button>
+                </div>
+                <p class="text-white/90 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur sed modi distinctio natus ipsam quo itaque atque. Odio quo saepe quidem error modi! Quos aliquam, ad debitis voluptatibus vel harum?</p>
+            </li>
+
+            <li class="listItem w-full p-5 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition duration-300 space-y-3 border border-white/30">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-lg font-semibold drop-shadow">List Three</h1>
+                    <button class="text-xl font-bold w-9 h-9 rounded-full bg-white/30 hover:bg-white 
+                    hover:text-green-700 flex justify-center items-center transition cursor-pointer shadow">+</button>
+                </div>
+                <p class="text-white/90 leading-relaxed">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, nam quos ex, quod quia explicabo earum aperiam praesentium, animi maiores totam deserunt nostrum maxime expedita illo vero quo quasi velit.</p>
+            </li>
+
+            <li class="listItem w-full p-5 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition duration-300 space-y-3 border border-white/30">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-lg font-semibold drop-shadow">List Four</h1>
+                    <button class="text-xl font-bold w-9 h-9 rounded-full bg-white/30 hover:bg-white 
+                    hover:text-orange-600 flex justify-center items-center transition cursor-pointer shadow">+</button>
+                </div>
+                <p class="text-white/90 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa provident dolor maiores minus quod, vitae quae nam dolorum pariatur quos consequuntur ab sed eligendi repellendus beatae accusantium sunt quo magni!</p>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- ⭐ Your JS unchanged -->
+    <script>
+        const listItems=document.querySelectorAll(".listItem");
+        listItems.forEach((listItem)=>{
+            let para=listItem.querySelector("p");
+            para.classList.add("hidden");
+            let button=listItem.querySelector("button");
+            let isClicked=false;
+            button.addEventListener('click',()=>{
+                if(isClicked===false){
+                    para.classList.remove("hidden");
+                    isClicked=true;
+                    button.innerText="-";
+                }
+                else if(isClicked===true){
+                    para.classList.add("hidden");
+                    isClicked=false;
+                    button.innerText="+";
+                }
+            });
+        })
+    </script>
+
+</body>
+</html>
